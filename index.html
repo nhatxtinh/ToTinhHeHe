@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tỏ Tình Hẹ Hẹ</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-image: url('https://img.freepik.com/premium-photo/abstract-blurred-gradient-pink-nature-wallpaper-backgroundsoft-background-wallpaperdesigngraphic-presentation_532332-1289.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+      backdrop-filter: blur(150px);
+    }
+
+    .letter {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      max-width: 400px;
+      padding: 30px;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 30px;
+      user-select: none;
+    }
+
+    #buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    button {
+      flex: 1;
+      padding: 15px 0;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    button:hover {
+      background: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+    }
+
+    /* Màu nút đồng ý đỏ hồng */
+    #agree {
+      background: rgba(255, 105, 180, 0.3);
+      border: 1px solid rgba(255, 105, 180, 0.7);
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+    }
+    #agree:hover {
+      background: rgba(255, 105, 180, 0.6);
+      box-shadow: 0 6px 20px rgba(255, 105, 180, 0.7);
+    }
+
+    /* Màu nút không đồng ý xám nhẹ */
+    #disagree {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #eee;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+    }
+    #disagree:hover {
+      background: rgba(255, 255, 255, 0.35);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35);
+    }
+
+    /* Responsive cho màn hình nhỏ (điện thoại) */
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+.letter {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 400px;
+  padding: clamp(20px, 4vw, 40px);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: clamp(16px, 4vw, 22px);
+  text-align: center;
+  margin-bottom: clamp(20px, 5vw, 40px);
+  user-select: none;
+}
+
+button {
+  flex: 1;
+  padding: clamp(12px, 2.5vw, 20px) 0;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-weight: 600;
+  font-size: clamp(14px, 3vw, 18px);
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive cho màn hình nhỏ (điện thoại) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .letter {
+    max-width: 100%;
+    padding: clamp(15px, 5vw, 25px);
+    font-size: clamp(16px, 5vw, 20px);
+    line-height: 1.4;
+  }
+
+  #buttons {
+    max-width: 100%;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  button {
+    flex: unset;
+    width: 100%;
+    padding: clamp(16px, 5vw, 22px) 0;
+    font-size: clamp(16px, 5vw, 20px);
+  }
+}
+  </style>
+</head>
+<body>
+
+  <div class="letter" id="message">
+    Loan à, Tính có điều này muốn nói với Loan nè...<br><br>
+    Loan làm người yêu Tính nha?
+  </div>
+
+  <div id="buttons">
+    <button id="agree">Đồng ý</button>
+    <button id="disagree">Không đồng ý</button>
+  </div>
+
+<script>
+  const messageDiv = document.getElementById('message');
+  const buttonsDiv = document.getElementById('buttons');
+  const agreeBtn = document.getElementById('agree');
+  const disagreeBtn = document.getElementById('disagree');
+
+  agreeBtn.addEventListener('click', () => {
+    messageDiv.innerHTML = 'Ố deeee, vợ chồng mình cứ thế thôi hẹ hẹ ❤️';
+    buttonsDiv.style.display = 'none';
+  });
+
+  disagreeBtn.addEventListener('click', () => {
+    messageDiv.innerHTML = 'Ai cho mà từ chối má ?, phải đồng ý má ơi 😘';
+
+    // Xóa nút cũ
+    buttonsDiv.innerHTML = '';
+
+    // Tạo nút OK mới
+    const okBtn = document.createElement('button');
+    okBtn.textContent = 'OK';
+    okBtn.style.flex = '1';
+    okBtn.style.padding = '15px 0';
+    okBtn.style.borderRadius = '15px';
+    okBtn.style.border = '1px solid rgba(255, 255, 255, 0.4)';
+    okBtn.style.background = 'rgba(255, 105, 180, 0.3)';
+    okBtn.style.color = '#fff';
+    okBtn.style.fontWeight = '600';
+    okBtn.style.fontSize = '16px';
+    okBtn.style.cursor = 'pointer';
+    okBtn.style.backdropFilter = 'blur(10px)';
+    okBtn.style.boxShadow = '0 4px 15px rgba(255, 105, 180, 0.4)';
+    okBtn.style.userSelect = 'none';
+
+    // Thêm hiệu ứng hover cho nút OK
+    okBtn.addEventListener('mouseenter', () => {
+      okBtn.style.background = 'rgba(255, 105, 180, 0.6)';
+      okBtn.style.boxShadow = '0 6px 20px rgba(255, 105, 180, 0.7)';
+    });
+    okBtn.addEventListener('mouseleave', () => {
+      okBtn.style.background = 'rgba(255, 105, 180, 0.3)';
+      okBtn.style.boxShadow = '0 4px 15px rgba(255, 105, 180, 0.4)';
+    });
+
+    // Khi bấm OK, quay về trang chủ (thay 'index.html' bằng url bạn muốn)
+    okBtn.addEventListener('click', () => {
+      window.location.href = 'index.html'; // <-- thay đổi URL tại đây nếu cần
+    });
+
+    buttonsDiv.appendChild(okBtn);
+  });
+</script>
+
+
+</body>
+</html>
