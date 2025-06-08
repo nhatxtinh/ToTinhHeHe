@@ -1,231 +1,344 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <title>Tỏ Tình Hẹ Hẹ</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-image: url('https://img.freepik.com/premium-photo/abstract-blurred-gradient-pink-nature-wallpaper-backgroundsoft-background-wallpaperdesigngraphic-presentation_532332-1289.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 100vh;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 20px;
-      backdrop-filter: blur(150px);
-    }
-
-    .letter {
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      max-width: 400px;
-      padding: 30px;
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 20px;
-      text-align: center;
-      margin-bottom: 30px;
-      user-select: none;
-    }
-
-    #buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      width: 100%;
-      max-width: 400px;
-    }
-
-    button {
-      flex: 1;
-      padding: 15px 0;
-      border-radius: 15px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
-      font-weight: 600;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-    }
-
-    button:hover {
-      background: rgba(255, 255, 255, 0.4);
-      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
-    }
-
-    /* Màu nút đồng ý đỏ hồng */
-    #agree {
-      background: rgba(255, 105, 180, 0.3);
-      border: 1px solid rgba(255, 105, 180, 0.7);
-      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
-    }
-    #agree:hover {
-      background: rgba(255, 105, 180, 0.6);
-      box-shadow: 0 6px 20px rgba(255, 105, 180, 0.7);
-    }
-
-    /* Màu nút không đồng ý xám nhẹ */
-    #disagree {
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: #eee;
-      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
-    }
-    #disagree:hover {
-      background: rgba(255, 255, 255, 0.35);
-      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35);
-    }
-
-    /* Responsive cho màn hình nhỏ (điện thoại) */
-    @media (max-width: 480px) {
-      body {
-        padding: 10px;
-      }
-
-.letter {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  max-width: 400px;
-  padding: clamp(20px, 4vw, 40px);
-  color: #ffffff;
-  font-weight: 600;
-  font-size: clamp(16px, 4vw, 22px);
-  text-align: center;
-  margin-bottom: clamp(20px, 5vw, 40px);
-  user-select: none;
-}
-
-button {
-  flex: 1;
-  padding: clamp(12px, 2.5vw, 20px) 0;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  font-weight: 600;
-  font-size: clamp(14px, 3vw, 18px);
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  user-select: none;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-}
-
-/* Responsive cho màn hình nhỏ (điện thoại) */
-@media (max-width: 480px) {
-  body {
-    padding: 15px;
-  }
-
-  .letter {
-    max-width: 100%;
-    padding: clamp(25px, 6vw, 40px);
-    font-size: clamp(18px, 6vw, 26px);
-    line-height: 1.5;
-    border-radius: 25px;
-  }
-
-  #buttons {
-    max-width: 100%;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  button {
-    flex: unset;
-    width: 100%;
-    padding: clamp(18px, 6vw, 26px) 0;
-    font-size: clamp(18px, 6vw, 22px);
-    border-radius: 20px;
-  }
-}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Người Tôi Yêu ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap');
+        
+        :root {
+            --primary-color: #ff6b8b;
+            --secondary-color: #ff8e9e;
+            --glass-color: rgba(255, 255, 255, 0.2);
+            --text-color: #333;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffd6e0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+            overflow-x: hidden;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+        }
+        
+        .glass-card {
+            background: var(--glass-color);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #d23669;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .heart {
+            color: #ff4757;
+            font-size: 1.5rem;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .btn {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 139, 0.4);
+            font-weight: 600;
+            display: inline-block;
+            margin: 10px 5px;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 139, 0.6);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            box-shadow: none;
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .heart-emoji {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0;
+            animation: float 6s linear infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        .troll-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            max-width: 90%;
+            text-align: center;
+            display: none;
+        }
+        
+        .troll-message button {
+            margin-top: 20px;
+        }
+        
+        .photo-frame {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .glass-card {
+                padding: 20px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <div class="letter" id="message">
-    Loan à, Tính có điều này muốn nói với Loan nè...<br><br>
-    Loan làm người yêu Tính nha?
-  </div>
-
-  <div id="buttons">
-    <button id="agree">Đồng ý</button>
-    <button id="disagree">Không đồng ý</button>
-  </div>
-
-<script>
-  const messageDiv = document.getElementById('message');
-  const buttonsDiv = document.getElementById('buttons');
-  const agreeBtn = document.getElementById('agree');
-  const disagreeBtn = document.getElementById('disagree');
-
-  agreeBtn.addEventListener('click', () => {
-    messageDiv.innerHTML = 'Ố deeee, vợ chồng mình cứ thế thôi hẹ hẹ ❤️';
-    buttonsDiv.style.display = 'none';
-  });
-
-  disagreeBtn.addEventListener('click', () => {
-    messageDiv.innerHTML = 'Ai cho mà từ chối má ?, phải đồng ý má ơi 😘';
-
-    // Xóa nút cũ
-    buttonsDiv.innerHTML = '';
-
-    // Tạo nút OK mới
-    const okBtn = document.createElement('button');
-    okBtn.textContent = 'OK';
-    okBtn.style.flex = '1';
-    okBtn.style.padding = '15px 0';
-    okBtn.style.borderRadius = '15px';
-    okBtn.style.border = '1px solid rgba(255, 255, 255, 0.4)';
-    okBtn.style.background = 'rgba(255, 105, 180, 0.3)';
-    okBtn.style.color = '#fff';
-    okBtn.style.fontWeight = '600';
-    okBtn.style.fontSize = '16px';
-    okBtn.style.cursor = 'pointer';
-    okBtn.style.backdropFilter = 'blur(10px)';
-    okBtn.style.boxShadow = '0 4px 15px rgba(255, 105, 180, 0.4)';
-    okBtn.style.userSelect = 'none';
-
-    // Thêm hiệu ứng hover cho nút OK
-    okBtn.addEventListener('mouseenter', () => {
-      okBtn.style.background = 'rgba(255, 105, 180, 0.6)';
-      okBtn.style.boxShadow = '0 6px 20px rgba(255, 105, 180, 0.7)';
-    });
-    okBtn.addEventListener('mouseleave', () => {
-      okBtn.style.background = 'rgba(255, 105, 180, 0.3)';
-      okBtn.style.boxShadow = '0 4px 15px rgba(255, 105, 180, 0.4)';
-    });
-
-    // Khi bấm OK, quay về trang chủ (thay 'index.html' bằng url bạn muốn)
-    okBtn.addEventListener('click', () => {
-      window.location.href = 'index.html'; // <-- thay đổi URL tại đây nếu cần
-    });
-
-    buttonsDiv.appendChild(okBtn);
-  });
-</script>
-
-
+    <div class="floating-hearts" id="heartsContainer"></div>
+    
+    <div class="container">
+        <div class="glass-card">
+            <div class="text-center">
+                <div class="photo-frame">
+                    <img src="https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/365936059_1469294020559218_5413239871596009117_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=__gs4WbTBDsQ7kNvwHopuro&_nc_oc=AdkvYwMZJfwTrxhftoPv1mj9851V1Kf8KRU84ykRVTizhtEG_XiN5Iq3a9rc-v7Omco&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=fCmolgbXkfQpG9z9O9gHRQ&oh=00_AfPvaP3dUHvMBUSSiDqLSRUjtj9_CEmmtxFtkbGx6c5CAA&oe=684B5FDC" alt="Ảnh người yêu">
+                </div>
+                <h1>Gửi em, tình yêu của anh <span class="heart">❤️</span></h1>
+                <p>Em biết không, từ ngày em giận anh, mọi thứ đều trở nên vô vị...</p>
+                <p>Anh nhớ những lúc chúng ta cùng nhau cười đùa, nhớ cả những lúc em giận dỗi vô cớ nữa.</p>
+                <p>Anh sai rồi, anh biết mình đã làm em buồn. Nhưng em ơi, tình yêu của chúng ta đâu chỉ có thế?</p>
+                <p>Hãy cho anh thêm một cơ hội, để anh có thể yêu thương em nhiều hơn nữa, chăm sóc em tốt hơn nữa.</p>
+                <p>Vì với anh, em là người quan trọng nhất <span class="heart">❤️</span></p>
+                
+                <div class="text-center" style="margin-top: 30px;">
+                    <button id="yesBtn" class="btn">Em đồng ý tha thứ cho anh</button>
+                    <button id="noBtn" class="btn btn-secondary">Không, em vẫn giận</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="troll-message" id="trollMessage">
+        <h2>Ồ không! Em không thể từ chối anh đâu 😜</h2>
+        <p>Em thử bấm nút kia đi, đừng bấm nút này nữa!</p>
+        <button id="closeTrollBtn" class="btn">Ừ, em biết rồi</button>
+    </div>
+    
+    <div class="troll-message hidden" id="successMessage">
+        <h2>Yêu em nhiều lắm! ❤️</h2>
+        <p>Cảm ơn em đã cho anh thêm cơ hội. Anh hứa sẽ không làm em buồn nữa.</p>
+        <p>Giờ thì chúng ta làm lành nhé? 😘</p>
+        <button id="closeSuccessBtn" class="btn">Ôm anh cái nào</button>
+    </div>
+    
+    <script>
+        // Tạo hiệu ứng trái tim bay
+        function createHearts() {
+            const container = document.getElementById('heartsContainer');
+            const colors = ['#ff6b8b', '#ff4757', '#ff8e9e', '#d23669'];
+            
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart-emoji';
+                    heart.innerHTML = '❤️';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                    heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    container.appendChild(heart);
+                    
+                    // Xóa trái tim sau khi animation kết thúc
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 6000);
+                }, i * 400);
+            }
+        }
+        
+        // Lặp lại hiệu ứng trái tim
+        setInterval(createHearts, 3000);
+        createHearts(); // Chạy lần đầu
+        
+        // Xử lý sự kiện nút
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const trollMessage = document.getElementById('trollMessage');
+        const successMessage = document.getElementById('successMessage');
+        const closeTrollBtn = document.getElementById('closeTrollBtn');
+        const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+        
+        yesBtn.addEventListener('click', () => {
+            successMessage.style.display = 'block';
+        });
+        
+        noBtn.addEventListener('click', (e) => {
+            trollMessage.style.display = 'block';
+            
+            // Di chuyển nút "Không" khi hover
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = Math.random() * 70 + 'vw';
+            noBtn.style.top = Math.random() * 70 + 'vh';
+        });
+        
+        closeTrollBtn.addEventListener('click', () => {
+            trollMessage.style.display = 'none';
+        });
+        
+        closeSuccessBtn.addEventListener('click', () => {
+            successMessage.style.display = 'none';
+            
+            // Hiệu ứng pháo hoa khi đồng ý
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    createHearts();
+                }, i * 100);
+            }
+            
+            // Đổi nội dung chính
+            document.querySelector('h1').textContent = 'Anh biết em sẽ đồng ý mà! ❤️';
+            document.querySelector('.glass-card p:last-child').textContent = 'Giờ thì chúng ta đi ăn kem nhé? Anh mời!';
+            
+            // Ẩn các nút
+            yesBtn.style.display = 'none';
+            noBtn.style.display = 'none';
+        });
+        
+        // Làm nút "Không" khó bấm
+        noBtn.addEventListener('mouseover', () => {
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = Math.random() * 70 + 'vw';
+            noBtn.style.top = Math.random() * 70 + 'vh';
+        });
+    </script>
 </body>
 </html>
